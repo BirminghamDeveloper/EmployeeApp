@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace 'com.hashinology.employeeapp'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.hashinology.employeeapp"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -73,6 +73,8 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
 }
 
 kapt {

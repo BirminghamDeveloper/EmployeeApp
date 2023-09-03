@@ -1,5 +1,6 @@
 package com.hashinology.employeeapp.di
 
+import com.hashinology.employeeapp.repo.EmployeeRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +26,12 @@ object ApiModule {
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService =
         retrofit.create(ApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideRepo(apiService: ApiService): EmployeeRepository{
+        return EmployeeRepository(apiService)
+    }
 
 }
 
