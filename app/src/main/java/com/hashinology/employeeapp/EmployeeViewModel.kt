@@ -23,11 +23,11 @@ class EmployeeViewModel @Inject constructor(private val employeeRepository: Empl
     fun getEmployeeData() =
         viewModelScope.launch(Dispatchers.IO) {
             val response = employeeRepository.getAllData()
-            _employeeMutableLiveData.value = response.data
-            /*if (response.status == "success"){
+//            _employeeMutableLiveData.value = response.data
+            if (response.status == "success"){
                 _employeeMutableLiveData.value = response.data
             }else{
                 _employeeError.value = response.message
-            }*/
+            }
         }
 }
